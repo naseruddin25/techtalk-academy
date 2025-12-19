@@ -1,0 +1,1 @@
+import"./hoisted.BmMYd0ml.js";document.getElementById("contact-form")?.addEventListener("submit",function(n){n.preventDefault();const e=document.getElementById("contact-form"),t=document.getElementById("form-success");e&&t&&(e.classList.add("hidden"),t.classList.remove("hidden"))});

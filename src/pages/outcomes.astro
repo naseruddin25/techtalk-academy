@@ -1,0 +1,209 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import RoleCard from '../components/RoleCard.astro';
+
+import roles from '../data/roles.json';
+---
+
+<BaseLayout title="Career Outcomes — TechTalk Academy" description="Explore the career paths and roles TechTalk Academy programs prepare you for.">
+  <!-- Hero Section -->
+  <Hero 
+    title="Your Career <span class='text-gradient'>Starts Here</span>"
+    subtitle="Our programs prepare you for in-demand technology roles with the skills employers are actively seeking."
+    showCta={false}
+    size="medium"
+  />
+
+  <!-- Career Roles Section -->
+  <section class="py-12 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <SectionHeading 
+        badge="Career Pathways"
+        title="Roles You Can <span class='text-gradient'>Pursue</span>"
+        subtitle="Industry-recognized positions aligned to each program pathway."
+      />
+
+      <div class="space-y-12">
+        {roles.pathways.map((pathway) => (
+          <div class="glass-card p-8 md:p-10">
+            <div class="flex items-center gap-4 mb-8">
+              <span class="text-4xl">{pathway.emoji}</span>
+              <div>
+                <h3 class="font-display text-2xl font-bold text-white">{pathway.title}</h3>
+                <p class="text-sm text-gray-400">Career roles you can pursue after completing this pathway</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {pathway.roles.map((role) => (
+                <RoleCard title={role.title} description={role.description} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Graduate Titles Section -->
+  <section class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-electric-purple/5 to-transparent"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-6">
+      <SectionHeading 
+        badge="Recognition"
+        title="What You <span class='text-gradient'>Graduate As</span>"
+        subtitle="Credentials that represent your achievements and readiness."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {roles.graduateTitles.map((title, index) => (
+          <div class="glass-card p-8 text-center relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-electric-cyan via-electric-purple to-electric-cyan"></div>
+            <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-electric-cyan/20 to-electric-purple/20 flex items-center justify-center">
+              <span class="text-2xl font-bold text-gradient">{String(index + 1).padStart(2, '0')}</span>
+            </div>
+            <h3 class="font-display text-lg font-bold text-white mb-3">{title.title}</h3>
+            <p class="text-gray-400 text-sm">{title.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="max-w-3xl mx-auto">
+        <div class="glass-card p-6 border-l-4 border-gold-400/50">
+          <div class="flex items-start gap-3">
+            <span class="text-xl">ℹ️</span>
+            <div>
+              <h4 class="font-semibold text-white mb-2">Important Information</h4>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                {roles.disclaimer}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Alignment -->
+  <section class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <SectionHeading 
+        badge="Industry Alignment"
+        title="Skills That <span class='text-gradient'>Matter</span>"
+        subtitle="Our curriculum is continuously aligned to current industry requirements."
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div class="space-y-6">
+          <div class="glass-card p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-2xl">📊</span>
+              <h3 class="font-display font-semibold text-white">Market-Driven Curriculum</h3>
+            </div>
+            <p class="text-gray-400 text-sm">
+              Our programs are designed based on analysis of job postings, industry trends, and employer feedback to ensure you're learning what the market demands.
+            </p>
+          </div>
+          <div class="glass-card p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-2xl">🎯</span>
+              <h3 class="font-display font-semibold text-white">Competency-Based Outcomes</h3>
+            </div>
+            <p class="text-gray-400 text-sm">
+              Rather than just covering topics, we focus on building demonstrable competencies that translate directly to job performance.
+            </p>
+          </div>
+          <div class="glass-card p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-2xl">💼</span>
+              <h3 class="font-display font-semibold text-white">Portfolio Development</h3>
+            </div>
+            <p class="text-gray-400 text-sm">
+              Graduate with a portfolio of real projects that demonstrate your capabilities to potential employers.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-card p-8 md:p-10">
+          <h3 class="font-display text-xl font-bold text-white mb-6">Career Support Includes</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-4">
+              <span class="w-8 h-8 rounded-lg bg-electric-cyan/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-electric-cyan" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </span>
+              <div>
+                <h4 class="font-semibold text-white">Resume & LinkedIn Optimization</h4>
+                <p class="text-gray-400 text-sm">Guidance on presenting your skills effectively</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-8 h-8 rounded-lg bg-electric-cyan/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-electric-cyan" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </span>
+              <div>
+                <h4 class="font-semibold text-white">Interview Preparation</h4>
+                <p class="text-gray-400 text-sm">Technical and behavioral interview practice</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-8 h-8 rounded-lg bg-electric-cyan/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-electric-cyan" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </span>
+              <div>
+                <h4 class="font-semibold text-white">Portfolio Reviews</h4>
+                <p class="text-gray-400 text-sm">Expert feedback on your project portfolio</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-8 h-8 rounded-lg bg-electric-cyan/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-electric-cyan" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </span>
+              <div>
+                <h4 class="font-semibold text-white">Networking Opportunities</h4>
+                <p class="text-gray-400 text-sm">Connect with industry professionals and peers</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 relative">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="glass-card p-12 relative overflow-hidden">
+        <div class="absolute -top-20 -right-20 w-60 h-60 bg-electric-cyan/20 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-electric-purple/20 rounded-full blur-3xl"></div>
+        
+        <div class="relative">
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Start Your Journey?
+          </h2>
+          <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
+            Take the first step toward a rewarding career in technology. Apply today or explore our programs.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/apply" class="btn-primary">
+              Apply Now
+            </a>
+            <a href="/programs" class="btn-secondary">
+              Explore Programs
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

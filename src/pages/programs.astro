@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ProgramCard from '../components/ProgramCard.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+
+import programs from '../data/programs.json';
+---
+
+<BaseLayout title="Programs — TechTalk Academy" description="Explore our career-focused technology programs in cloud computing, cybersecurity, software engineering, and AI.">
+  <!-- Hero Section -->
+  <Hero 
+    title="Career-Focused <span class='text-gradient'>Programs</span>"
+    subtitle="Industry-aligned curriculum designed by practitioners, delivered through immersive learning experiences."
+    showCta={false}
+    size="medium"
+  />
+
+  <!-- Programs Grid -->
+  <section class="py-12 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {programs.programs.map((program) => (
+          <ProgramCard {...program} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Learning Approach -->
+  <section class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <SectionHeading 
+        badge="Our Approach"
+        title="How You'll <span class='text-gradient'>Learn</span>"
+        subtitle="A blend of immersive technology, hands-on practice, and expert guidance."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-card p-8 text-center">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-electric-cyan/20 to-electric-cyan/5 flex items-center justify-center">
+            <span class="text-3xl">🥽</span>
+          </div>
+          <h3 class="font-display font-semibold text-white text-xl mb-3">Immersive VR Labs</h3>
+          <p class="text-gray-400">Step inside virtual environments that bring abstract concepts to life. Practice in realistic simulations that mirror real-world scenarios.</p>
+        </div>
+        <div class="glass-card p-8 text-center">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-electric-purple/20 to-electric-purple/5 flex items-center justify-center">
+            <span class="text-3xl">👨‍🏫</span>
+          </div>
+          <h3 class="font-display font-semibold text-white text-xl mb-3">Expert Instructors</h3>
+          <p class="text-gray-400">Learn from diverse professionals with real industry experience. Get personalized feedback and mentorship throughout your journey.</p>
+        </div>
+        <div class="glass-card p-8 text-center">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-gold-400/20 to-gold-400/5 flex items-center justify-center">
+            <span class="text-3xl">🎯</span>
+          </div>
+          <h3 class="font-display font-semibold text-white text-xl mb-3">Project-Based</h3>
+          <p class="text-gray-400">Build a portfolio of real projects that demonstrate your capabilities. Graduate with tangible proof of your skills.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Framework -->
+  <section class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-electric-purple/5 to-transparent"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-6">
+      <SectionHeading 
+        badge="Skills Framework"
+        title="What You'll <span class='text-gradient'>Master</span>"
+        subtitle="Comprehensive skill development aligned to industry requirements."
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div class="space-y-6">
+          <div class="glass-card p-6">
+            <h3 class="font-display font-semibold text-white mb-4 flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-electric-cyan/20 flex items-center justify-center text-sm">01</span>
+              Technical Foundations
+            </h3>
+            <p class="text-gray-400 mb-4">Core technical skills required for your chosen career path, from fundamentals to advanced concepts.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300">Programming</span>
+              <span class="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300">Systems</span>
+              <span class="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300">Networking</span>
+              <span class="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300">Security</span>
+            </div>
+          </div>
+          <div class="glass-card p-6">
+            <h3 class="font-display font-semibold text-white mb-4 flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-electric-purple/20 flex items-center justify-center text-sm">02</span>
+              Tools & Platforms
+            </h3>
+            <p class="text-gray-400 mb-4">Hands-on experience with industry-standard tools, platforms, and technologies.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300">Cloud Platforms</span>
+              <span class="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300">DevOps Tools</span>
+              <span class="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300">Security Tools</span>
+              <span class="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300">AI/ML Frameworks</span>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <div class="glass-card p-6">
+            <h3 class="font-display font-semibold text-white mb-4 flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-electric-blue/20 flex items-center justify-center text-sm">03</span>
+              Professional Practice
+            </h3>
+            <p class="text-gray-400 mb-4">Real-world workflows, methodologies, and best practices used by leading tech teams.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300">Agile/Scrum</span>
+              <span class="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300">CI/CD</span>
+              <span class="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300">Code Review</span>
+              <span class="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300">Documentation</span>
+            </div>
+          </div>
+          <div class="glass-card p-6">
+            <h3 class="font-display font-semibold text-white mb-4 flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-gold-400/20 flex items-center justify-center text-sm">04</span>
+              Career Readiness
+            </h3>
+            <p class="text-gray-400 mb-4">Portfolio development, interview preparation, and professional skills for career success.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300">Portfolio</span>
+              <span class="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300">Interviews</span>
+              <span class="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300">Communication</span>
+              <span class="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300">Networking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 relative">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="glass-card p-12 relative overflow-hidden">
+        <div class="absolute -top-20 -right-20 w-60 h-60 bg-electric-cyan/20 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-electric-purple/20 rounded-full blur-3xl"></div>
+        
+        <div class="relative">
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-6">
+            Find Your Path
+          </h2>
+          <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
+            Not sure which program is right for you? We're here to help you explore your options.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/apply" class="btn-primary">
+              Apply Now
+            </a>
+            <a href="/outcomes" class="btn-secondary">
+              View Career Outcomes
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

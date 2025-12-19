@@ -1,0 +1,284 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+---
+
+<BaseLayout 
+  title="About Us | TechTalk Academy" 
+  description="Learn about TechTalk Academy's mission to transform technology education through immersive VR learning experiences."
+>
+  <Hero
+    title="Reimagining Technology Education"
+    subtitle="We're building the future of learning — where immersive experiences meet real-world skills."
+    showCTA={false}
+  />
+
+  <!-- Mission Section -->
+  <section class="py-24 relative">
+    <div class="absolute inset-0 vr-grid opacity-30"></div>
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <div class="glass-card p-10 md:p-14">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center text-3xl">
+              🎯
+            </div>
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-white">Our Mission</h2>
+          </div>
+          <p class="text-xl text-slate-300 leading-relaxed">
+            TechTalk Academy exists to <span class="text-cyan-400 font-semibold">democratize access to high-quality technology education</span> through immersive, hands-on learning experiences. We believe that talent is universal, but opportunity is not — and we're here to change that.
+          </p>
+          <p class="text-lg text-slate-400 leading-relaxed mt-6">
+            By combining cutting-edge VR technology with expert-led instruction, we prepare learners from all backgrounds for rewarding careers in cloud computing, cybersecurity, software engineering, and AI.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision Section -->
+  <section class="py-24 relative bg-slate-900/50">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="glass-card p-10 md:p-14 border-purple-500/30">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center text-3xl">
+              🔮
+            </div>
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-white">Our Vision</h2>
+          </div>
+          <p class="text-xl text-slate-300 leading-relaxed">
+            We envision a world where <span class="text-purple-400 font-semibold">anyone with drive and determination can access transformative technology education</span> — regardless of their location, background, or prior experience.
+          </p>
+          <p class="text-lg text-slate-400 leading-relaxed mt-6">
+            Through immersive virtual environments, learners can walk through data centers, respond to security incidents in real-time, and collaborate with peers across the globe — all from wherever they are.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="py-24 relative">
+    <div class="absolute inset-0 vr-grid opacity-20"></div>
+    <div class="container mx-auto px-6 relative z-10">
+      <SectionHeading
+        title="Our Core Values"
+        subtitle="The principles that guide everything we do"
+      />
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mt-16">
+        <!-- Value 1 -->
+        <div class="glass-card-hover p-8 group">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            🚀
+          </div>
+          <h3 class="text-xl font-display font-bold text-white mb-4">Innovation First</h3>
+          <p class="text-slate-400 leading-relaxed">
+            We constantly push the boundaries of what's possible in education, embracing new technologies and methodologies to create transformative learning experiences.
+          </p>
+        </div>
+
+        <!-- Value 2 -->
+        <div class="glass-card-hover p-8 group">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            🤝
+          </div>
+          <h3 class="text-xl font-display font-bold text-white mb-4">Inclusive Excellence</h3>
+          <p class="text-slate-400 leading-relaxed">
+            Excellence and accessibility go hand in hand. We maintain rigorous standards while actively removing barriers to entry for underrepresented communities.
+          </p>
+        </div>
+
+        <!-- Value 3 -->
+        <div class="glass-card-hover p-8 group">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            🎓
+          </div>
+          <h3 class="text-xl font-display font-bold text-white mb-4">Real-World Ready</h3>
+          <p class="text-slate-400 leading-relaxed">
+            Every curriculum, lab, and simulation is designed with industry input to ensure our graduates are prepared for the challenges they'll face on day one.
+          </p>
+        </div>
+
+        <!-- Value 4 -->
+        <div class="glass-card-hover p-8 group">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            🌱
+          </div>
+          <h3 class="text-xl font-display font-bold text-white mb-4">Growth Mindset</h3>
+          <p class="text-slate-400 leading-relaxed">
+            We believe in the power of continuous learning. Our community embraces challenges, learns from setbacks, and celebrates progress over perfection.
+          </p>
+        </div>
+
+        <!-- Value 5 -->
+        <div class="glass-card-hover p-8 group">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-indigo-500/20 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            🛡️
+          </div>
+          <h3 class="text-xl font-display font-bold text-white mb-4">Integrity Always</h3>
+          <p class="text-slate-400 leading-relaxed">
+            We're transparent about what we offer, honest about outcomes, and committed to ethical practices in everything we do.
+          </p>
+        </div>
+
+        <!-- Value 6 -->
+        <div class="glass-card-hover p-8 group">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-rose-500/20 to-red-500/20 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            💡
+          </div>
+          <h3 class="text-xl font-display font-bold text-white mb-4">Community Driven</h3>
+          <p class="text-slate-400 leading-relaxed">
+            We build alongside our learners, partners, and communities — listening, adapting, and growing together to create meaningful impact.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Innovation Section -->
+  <section class="py-24 relative bg-gradient-to-b from-slate-900/50 to-transparent">
+    <div class="container mx-auto px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-6">
+              Innovation in Education
+            </h2>
+            <p class="text-lg text-slate-300 leading-relaxed mb-6">
+              Traditional education wasn't designed for the speed of modern technology. By the time a textbook is printed, the tools and practices it describes may already be outdated.
+            </p>
+            <p class="text-slate-400 leading-relaxed mb-6">
+              TechTalk Academy takes a different approach. Our immersive learning environments are continuously updated to reflect real-world conditions. When a new cloud service launches or a new security threat emerges, our simulations evolve to match.
+            </p>
+            <p class="text-slate-400 leading-relaxed">
+              This isn't just about staying current — it's about preparing learners to thrive in an industry that never stops changing.
+            </p>
+          </div>
+          
+          <div class="relative">
+            <!-- Innovation Visual -->
+            <div class="glass-card p-8 relative overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-blue-500/10"></div>
+              <div class="relative z-10">
+                <svg viewBox="0 0 300 200" class="w-full" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Innovation graphic -->
+                  <defs>
+                    <linearGradient id="innovGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.8" />
+                      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.8" />
+                    </linearGradient>
+                    <linearGradient id="innovGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:0.8" />
+                      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:0.8" />
+                    </linearGradient>
+                  </defs>
+                  
+                  <!-- Central brain/innovation hub -->
+                  <circle cx="150" cy="100" r="40" fill="url(#innovGrad1)" opacity="0.3" class="animate-pulse"/>
+                  <circle cx="150" cy="100" r="30" fill="none" stroke="url(#innovGrad1)" stroke-width="2"/>
+                  
+                  <!-- Orbiting elements -->
+                  <g class="animate-spin" style="transform-origin: 150px 100px; animation-duration: 20s;">
+                    <circle cx="150" cy="40" r="8" fill="#00d4ff" opacity="0.8"/>
+                    <circle cx="210" cy="100" r="6" fill="#8b5cf6" opacity="0.8"/>
+                    <circle cx="150" cy="160" r="7" fill="#fbbf24" opacity="0.8"/>
+                    <circle cx="90" cy="100" r="5" fill="#3b82f6" opacity="0.8"/>
+                  </g>
+                  
+                  <!-- Connection lines -->
+                  <path d="M150 70 L150 40" stroke="#00d4ff" stroke-width="1" opacity="0.5"/>
+                  <path d="M180 100 L210 100" stroke="#8b5cf6" stroke-width="1" opacity="0.5"/>
+                  <path d="M150 130 L150 160" stroke="#fbbf24" stroke-width="1" opacity="0.5"/>
+                  <path d="M120 100 L90 100" stroke="#3b82f6" stroke-width="1" opacity="0.5"/>
+                  
+                  <!-- VR Headset icon in center -->
+                  <rect x="135" y="90" width="30" height="18" rx="4" fill="none" stroke="#fff" stroke-width="2"/>
+                  <circle cx="143" cy="99" r="4" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
+                  <circle cx="157" cy="99" r="4" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
+                  <path d="M130 99 L135 99 M165 99 L170 99" stroke="#fff" stroke-width="2"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Impact Section -->
+  <section class="py-24 relative">
+    <div class="absolute inset-0 vr-grid opacity-20"></div>
+    <div class="container mx-auto px-6 relative z-10">
+      <SectionHeading
+        title="Community Impact"
+        subtitle="Building pathways to opportunity for everyone"
+      />
+      
+      <div class="max-w-5xl mx-auto mt-16">
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Impact Area 1 -->
+          <div class="glass-card p-8 border-l-4 border-cyan-500">
+            <h3 class="text-xl font-display font-bold text-white mb-4">Workforce Development</h3>
+            <p class="text-slate-400 leading-relaxed">
+              We partner with workforce agencies and community organizations to connect training with real career opportunities, helping close the skills gap in technology.
+            </p>
+          </div>
+
+          <!-- Impact Area 2 -->
+          <div class="glass-card p-8 border-l-4 border-purple-500">
+            <h3 class="text-xl font-display font-bold text-white mb-4">Veteran Transition</h3>
+            <p class="text-slate-400 leading-relaxed">
+              Our programs are designed to help veterans translate their military experience into civilian tech careers, honoring their service with new opportunities.
+            </p>
+          </div>
+
+          <!-- Impact Area 3 -->
+          <div class="glass-card p-8 border-l-4 border-amber-500">
+            <h3 class="text-xl font-display font-bold text-white mb-4">Underserved Communities</h3>
+            <p class="text-slate-400 leading-relaxed">
+              We actively work to remove barriers to tech education, providing flexible learning options and support for learners from all backgrounds.
+            </p>
+          </div>
+
+          <!-- Impact Area 4 -->
+          <div class="glass-card p-8 border-l-4 border-green-500">
+            <h3 class="text-xl font-display font-bold text-white mb-4">Employer Partnerships</h3>
+            <p class="text-slate-400 leading-relaxed">
+              By working directly with employers, we ensure our curriculum meets industry needs and our graduates are prepared for the roles companies need to fill.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 relative">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="glass-card p-12 relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-blue-500/10"></div>
+          <div class="relative z-10">
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-6">
+              Ready to Start Your Journey?
+            </h2>
+            <p class="text-lg text-slate-300 mb-8">
+              Whether you're changing careers, starting fresh, or looking to upskill, TechTalk Academy is here to help you succeed.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/apply" class="btn-primary">
+                Apply Now
+              </a>
+              <a href="/programs" class="btn-secondary">
+                Explore Programs
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

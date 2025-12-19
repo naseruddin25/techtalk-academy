@@ -1,0 +1,119 @@
+{
+  "pathways": [
+    {
+      "id": "cloud-devops",
+      "title": "Cloud & DevOps",
+      "emoji": "☁️",
+      "roles": [
+        {
+          "title": "Cloud Engineer",
+          "description": "Design, implement, and manage cloud infrastructure solutions"
+        },
+        {
+          "title": "DevOps Engineer",
+          "description": "Bridge development and operations with automation and best practices"
+        },
+        {
+          "title": "Platform Engineer",
+          "description": "Build and maintain internal developer platforms and tooling"
+        },
+        {
+          "title": "Site Reliability Engineer (SRE)",
+          "description": "Ensure system reliability, performance, and scalability"
+        },
+        {
+          "title": "Junior Cloud Architect",
+          "description": "Design cloud solutions aligned to business requirements"
+        }
+      ]
+    },
+    {
+      "id": "devsecops-cyber",
+      "title": "DevSecOps & Cybersecurity",
+      "emoji": "🛡️",
+      "roles": [
+        {
+          "title": "DevSecOps Engineer",
+          "description": "Integrate security practices throughout the development lifecycle"
+        },
+        {
+          "title": "Security Engineer",
+          "description": "Design and implement security controls and infrastructure"
+        },
+        {
+          "title": "Cloud Security Analyst",
+          "description": "Monitor and secure cloud environments and workloads"
+        },
+        {
+          "title": "Application Security Analyst",
+          "description": "Assess application security and guide remediation efforts"
+        },
+        {
+          "title": "SOC Analyst (Entry Level)",
+          "description": "Monitor security events and respond to incidents"
+        }
+      ]
+    },
+    {
+      "id": "software-qa",
+      "title": "Software & QA Engineering",
+      "emoji": "💻",
+      "roles": [
+        {
+          "title": "Software Engineer",
+          "description": "Design, develop, and maintain software applications"
+        },
+        {
+          "title": "QA Automation Engineer",
+          "description": "Build and maintain automated testing frameworks"
+        },
+        {
+          "title": "SDET",
+          "description": "Combine development skills with quality engineering practices"
+        },
+        {
+          "title": "API Test Engineer",
+          "description": "Specialize in API testing and service validation"
+        }
+      ]
+    },
+    {
+      "id": "ai-foundations",
+      "title": "AI Foundations",
+      "emoji": "🤖",
+      "roles": [
+        {
+          "title": "AI Engineering Associate",
+          "description": "Support implementation of AI solutions in production"
+        },
+        {
+          "title": "Automation Engineer",
+          "description": "Design intelligent automation workflows"
+        },
+        {
+          "title": "AI QA Engineer",
+          "description": "Test and validate AI systems and model outputs"
+        },
+        {
+          "title": "AI Operations Analyst",
+          "description": "Monitor and maintain AI systems in production"
+        }
+      ]
+    }
+  ],
+  "graduateTitles": [
+    {
+      "title": "TechTalk Academy Program Graduate",
+      "description": "Completed comprehensive program curriculum with verified competencies"
+    },
+    {
+      "title": "Industry-Ready Practitioner",
+      "description": "Demonstrated readiness for professional technology roles"
+    },
+    {
+      "title": "Portfolio-Validated Candidate",
+      "description": "Proven capabilities through project portfolio and assessments"
+    }
+  ],
+  "disclaimer": "Titles reflect skill readiness and training outcomes. Employment is not guaranteed. Career outcomes depend on individual effort, market conditions, and additional factors."
+}

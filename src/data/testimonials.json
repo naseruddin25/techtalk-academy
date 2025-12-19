@@ -1,0 +1,36 @@
+{
+  "testimonials": [
+    {
+      "quote": "The immersive VR labs made complex cloud concepts click in ways traditional learning never did. I felt like I was actually inside the infrastructure.",
+      "author": "Career Changer",
+      "role": "Former Retail Manager",
+      "program": "Cloud & DevOps"
+    },
+    {
+      "quote": "As a veteran transitioning to civilian tech roles, the hands-on approach and supportive community made all the difference in building my confidence.",
+      "author": "Veteran Graduate",
+      "role": "U.S. Army Veteran",
+      "program": "DevSecOps & Cybersecurity"
+    },
+    {
+      "quote": "The instructors brought real-world experience into every session. You're not just learning theory—you're learning how tech actually works in production.",
+      "author": "Recent Graduate",
+      "role": "First-Generation College Student",
+      "program": "Software & QA Engineering"
+    }
+  ],
+  "partners": [
+    {
+      "type": "Workforce Development",
+      "description": "Partnering with WIOA-eligible programs to expand access"
+    },
+    {
+      "type": "Community Organizations",
+      "description": "Collaborating with local nonprofits to reach underserved communities"
+    },
+    {
+      "type": "Employer Partners",
+      "description": "Building talent pipelines with forward-thinking companies"
+    }
+  ]
+}

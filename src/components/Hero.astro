@@ -1,0 +1,79 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  showCta?: boolean;
+  size?: 'large' | 'medium';
+}
+
+const { title, subtitle, showCta = true, size = 'large' } = Astro.props;
+---
+
+<section class={`relative ${size === 'large' ? 'pt-40 pb-32' : 'pt-36 pb-20'} overflow-hidden`}>
+  <!-- Background effects -->
+  <div class="absolute inset-0 pointer-events-none">
+    <!-- Gradient orbs -->
+    <div class="glow-orb w-[600px] h-[600px] bg-electric-purple/20 -top-40 -left-40 animate-pulse-glow"></div>
+    <div class="glow-orb w-[500px] h-[500px] bg-electric-cyan/20 -bottom-20 -right-20 animate-pulse-glow" style="animation-delay: 1s;"></div>
+    
+    <!-- VR headset illustration (SVG) -->
+    {size === 'large' && (
+      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full opacity-20 hidden lg:block">
+        <svg viewBox="0 0 400 300" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="vrGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.3"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="200" cy="150" rx="150" ry="80" stroke="url(#vrGradient)" stroke-width="2" fill="none"/>
+          <ellipse cx="130" cy="150" rx="50" ry="50" stroke="url(#vrGradient)" stroke-width="1.5" fill="none"/>
+          <ellipse cx="270" cy="150" rx="50" ry="50" stroke="url(#vrGradient)" stroke-width="1.5" fill="none"/>
+          <path d="M80 150 Q50 150 50 170 L50 200" stroke="url(#vrGradient)" stroke-width="1.5" fill="none"/>
+          <path d="M320 150 Q350 150 350 170 L350 200" stroke="url(#vrGradient)" stroke-width="1.5" fill="none"/>
+          <circle cx="130" cy="150" r="20" stroke="#00d4ff" stroke-width="1" fill="none" opacity="0.5"/>
+          <circle cx="270" cy="150" r="20" stroke="#00d4ff" stroke-width="1" fill="none" opacity="0.5"/>
+        </svg>
+      </div>
+    )}
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-6">
+    <div class={`${size === 'large' ? 'max-w-4xl' : 'max-w-3xl'}`}>
+      <!-- Badge -->
+      {size === 'large' && (
+        <div class="inline-flex items-center gap-2 px-4 py-2 glass-card text-sm text-electric-cyan mb-8 fade-in">
+          <span class="w-2 h-2 rounded-full bg-electric-cyan animate-pulse"></span>
+          Now Enrolling — Transform Your Future
+        </div>
+      )}
+
+      <!-- Title -->
+      <h1 class={`font-display font-bold tracking-tight mb-6 fade-in delay-100 ${size === 'large' ? 'text-5xl md:text-7xl' : 'text-4xl md:text-5xl'}`}>
+        <Fragment set:html={title} />
+      </h1>
+
+      <!-- Subtitle -->
+      {subtitle && (
+        <p class={`text-gray-400 mb-10 fade-in delay-200 ${size === 'large' ? 'text-xl md:text-2xl max-w-2xl' : 'text-lg md:text-xl max-w-xl'}`}>
+          {subtitle}
+        </p>
+      )}
+
+      <!-- CTA Buttons -->
+      {showCta && (
+        <div class="flex flex-col sm:flex-row gap-4 fade-in delay-300">
+          <a href="/apply" class="btn-primary">
+            Start Your Journey
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <a href="/programs" class="btn-secondary">
+            Explore Programs
+          </a>
+        </div>
+      )}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,334 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import StatCard from '../components/StatCard.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+
+import stats from '../data/stats.json';
+import programs from '../data/programs.json';
+import testimonials from '../data/testimonials.json';
+---
+
+<BaseLayout title="TechTalk Academy — Immersive Tech Education">
+  <!-- Hero Section -->
+  <Hero 
+    title="Master Tomorrow's <span class='text-gradient'>Technology</span> Today"
+    subtitle="Immersive, VR-enabled education preparing you for careers in cloud computing, cybersecurity, software engineering, and AI."
+  />
+
+  <!-- Stats Section -->
+  <section class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {stats.stats.map((stat, i) => (
+          <div class={`fade-in delay-${(i + 1) * 100}`}>
+            <StatCard {...stat} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Teach Section -->
+  <section class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <SectionHeading 
+        badge="Our Programs"
+        title="Career-Focused <span class='text-gradient'>Learning Paths</span>"
+        subtitle="Industry-aligned programs designed to take you from fundamentals to job-ready in high-demand technology fields."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {programs.programs.map((program) => (
+          <a href={`/programs#${program.id}`} class="glass-card-hover p-8 group block">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="text-4xl">{program.emoji}</span>
+              <div>
+                <h3 class="font-display text-xl font-bold text-white group-hover:text-gradient transition-colors">{program.title}</h3>
+                <p class="text-sm text-gray-400">{program.tagline}</p>
+              </div>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed">{program.description.substring(0, 150)}...</p>
+            <div class="mt-4 flex items-center gap-2 text-electric-cyan text-sm font-medium">
+              Learn more
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Teach Section -->
+  <section class="py-20 relative overflow-hidden">
+    <!-- Background accent -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-electric-purple/5 to-transparent"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-6">
+      <SectionHeading 
+        badge="Our Approach"
+        title="Learning That <span class='text-gradient'>Immerses</span> You"
+        subtitle="Experience the future of education through VR-enabled classrooms, hands-on labs, and real-world simulations."
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- VR Illustration -->
+        <div class="relative order-2 lg:order-1">
+          <div class="glass-card p-8 relative overflow-hidden">
+            <!-- VR environment visualization -->
+            <svg viewBox="0 0 500 350" class="w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gridGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.1"/>
+                </linearGradient>
+                <linearGradient id="personGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#00d4ff"/>
+                  <stop offset="100%" stop-color="#8b5cf6"/>
+                </linearGradient>
+              </defs>
+              
+              <!-- Grid floor -->
+              <g stroke="url(#gridGrad)" stroke-width="0.5">
+                <line x1="50" y1="280" x2="450" y2="280"/>
+                <line x1="70" y1="300" x2="430" y2="300"/>
+                <line x1="90" y1="320" x2="410" y2="320"/>
+                <line x1="150" y1="280" x2="100" y2="320"/>
+                <line x1="250" y1="280" x2="250" y2="320"/>
+                <line x1="350" y1="280" x2="400" y2="320"/>
+              </g>
+              
+              <!-- Floating screens -->
+              <rect x="50" y="80" width="120" height="80" rx="8" stroke="#00d4ff" stroke-width="1.5" fill="none" opacity="0.6"/>
+              <rect x="330" y="60" width="120" height="80" rx="8" stroke="#8b5cf6" stroke-width="1.5" fill="none" opacity="0.6"/>
+              <rect x="180" y="40" width="140" height="100" rx="8" stroke="#00d4ff" stroke-width="2" fill="none"/>
+              
+              <!-- Code lines in screens -->
+              <g opacity="0.4">
+                <line x1="70" y1="100" x2="140" y2="100" stroke="#00d4ff" stroke-width="2"/>
+                <line x1="70" y1="115" x2="120" y2="115" stroke="#8b5cf6" stroke-width="2"/>
+                <line x1="70" y1="130" x2="150" y2="130" stroke="#00d4ff" stroke-width="2"/>
+              </g>
+              
+              <!-- Person silhouette with VR headset -->
+              <g transform="translate(250, 180)">
+                <ellipse cx="0" cy="60" rx="25" ry="8" fill="url(#gridGrad)" opacity="0.3"/>
+                <path d="M-20 50 L-15 0 L15 0 L20 50" stroke="url(#personGrad)" stroke-width="2" fill="none"/>
+                <circle cx="0" cy="-15" r="20" stroke="url(#personGrad)" stroke-width="2" fill="none"/>
+                <rect x="-25" y="-25" width="50" height="18" rx="5" stroke="#00d4ff" stroke-width="1.5" fill="rgba(0,212,255,0.1)"/>
+              </g>
+              
+              <!-- Connection lines -->
+              <path d="M110 120 Q180 150 250 140" stroke="#00d4ff" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="4 4"/>
+              <path d="M390 100 Q320 130 250 140" stroke="#8b5cf6" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="4 4"/>
+            </svg>
+            
+            <!-- Floating badges -->
+            <div class="absolute top-4 right-4 glass-card px-3 py-1.5 text-xs text-electric-cyan">
+              🥽 VR Enabled
+            </div>
+          </div>
+        </div>
+
+        <!-- Features list -->
+        <div class="order-1 lg:order-2 space-y-6">
+          <div class="glass-card p-6 border-l-4 border-electric-cyan">
+            <h3 class="font-display font-semibold text-white mb-2">🥽 Immersive VR Environments</h3>
+            <p class="text-gray-400 text-sm">Step inside virtual data centers, security operations centers, and development environments. Learn by doing in spaces that feel real.</p>
+          </div>
+          <div class="glass-card p-6 border-l-4 border-electric-purple">
+            <h3 class="font-display font-semibold text-white mb-2">👨‍🏫 Live Instructor-Led Sessions</h3>
+            <p class="text-gray-400 text-sm">Expert instructors guide you through concepts and hands-on exercises, providing real-time feedback and support.</p>
+          </div>
+          <div class="glass-card p-6 border-l-4 border-electric-blue">
+            <h3 class="font-display font-semibold text-white mb-2">🧪 Hands-On Labs</h3>
+            <p class="text-gray-400 text-sm">Practice in realistic lab environments where you can experiment, fail safely, and build real skills through repetition.</p>
+          </div>
+          <div class="glass-card p-6 border-l-4 border-gold-400">
+            <h3 class="font-display font-semibold text-white mb-2">📱 Flexible Access</h3>
+            <p class="text-gray-400 text-sm">VR-enhanced learning with non-VR alternatives available. Access your coursework anytime, anywhere.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who It's For Section -->
+  <section class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <SectionHeading 
+        badge="Who We Serve"
+        title="Built for <span class='text-gradient'>Your Journey</span>"
+        subtitle="Whether you're starting fresh, pivoting careers, or upskilling—we meet you where you are."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="glass-card-hover p-8">
+          <span class="text-4xl mb-4 block">🔄</span>
+          <h3 class="font-display font-semibold text-white text-xl mb-2">Career Changers</h3>
+          <p class="text-gray-400">Transitioning from another field? Our structured programs help you build tech skills from the ground up.</p>
+        </div>
+        <div class="glass-card-hover p-8">
+          <span class="text-4xl mb-4 block">🎓</span>
+          <h3 class="font-display font-semibold text-white text-xl mb-2">Students & Graduates</h3>
+          <p class="text-gray-400">Supplement your education with practical, hands-on skills that employers actually need.</p>
+        </div>
+        <div class="glass-card-hover p-8">
+          <span class="text-4xl mb-4 block">🎖️</span>
+          <h3 class="font-display font-semibold text-white text-xl mb-2">Veterans</h3>
+          <p class="text-gray-400">Leverage your discipline and leadership as you transition to high-demand civilian tech careers.</p>
+        </div>
+        <div class="glass-card-hover p-8">
+          <span class="text-4xl mb-4 block">🤝</span>
+          <h3 class="font-display font-semibold text-white text-xl mb-2">Workforce Agencies</h3>
+          <p class="text-gray-400">Partner with us to provide WIOA-eligible programs that deliver measurable outcomes.</p>
+        </div>
+        <div class="glass-card-hover p-8">
+          <span class="text-4xl mb-4 block">🏢</span>
+          <h3 class="font-display font-semibold text-white text-xl mb-2">Employers</h3>
+          <p class="text-gray-400">Build your talent pipeline with graduates trained on the skills your teams actually need.</p>
+        </div>
+        <div class="glass-card-hover p-8">
+          <span class="text-4xl mb-4 block">🌍</span>
+          <h3 class="font-display font-semibold text-white text-xl mb-2">Underserved Communities</h3>
+          <p class="text-gray-400">Access quality tech education designed to be inclusive, accessible, and transformative.</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="/who-we-serve" class="btn-secondary">
+          Learn More About Who We Serve
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <SectionHeading 
+        badge="Why TechTalk"
+        title="What Sets Us <span class='text-gradient'>Apart</span>"
+        subtitle="A modern approach to technical education built for the demands of today's job market."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {stats.features.map((feature) => (
+          <FeatureCard {...feature} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Career Roles Preview -->
+  <section class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-navy-800/30 to-transparent"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-6">
+      <SectionHeading 
+        badge="Career Outcomes"
+        title="Roles You Can <span class='text-gradient'>Pursue</span>"
+        subtitle="Our programs prepare you for in-demand roles across the technology industry."
+      />
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        <div class="glass-card p-4 text-center">
+          <span class="text-2xl block mb-2">☁️</span>
+          <span class="text-sm text-gray-300">Cloud Engineer</span>
+        </div>
+        <div class="glass-card p-4 text-center">
+          <span class="text-2xl block mb-2">🛡️</span>
+          <span class="text-sm text-gray-300">Security Engineer</span>
+        </div>
+        <div class="glass-card p-4 text-center">
+          <span class="text-2xl block mb-2">💻</span>
+          <span class="text-sm text-gray-300">Software Engineer</span>
+        </div>
+        <div class="glass-card p-4 text-center">
+          <span class="text-2xl block mb-2">🤖</span>
+          <span class="text-sm text-gray-300">AI Engineer</span>
+        </div>
+        <div class="glass-card p-4 text-center">
+          <span class="text-2xl block mb-2">⚙️</span>
+          <span class="text-sm text-gray-300">DevOps Engineer</span>
+        </div>
+        <div class="glass-card p-4 text-center">
+          <span class="text-2xl block mb-2">🧪</span>
+          <span class="text-sm text-gray-300">QA Engineer</span>
+        </div>
+        <div class="glass-card p-4 text-center">
+          <span class="text-2xl block mb-2">📊</span>
+          <span class="text-sm text-gray-300">SRE</span>
+        </div>
+        <div class="glass-card p-4 text-center">
+          <span class="text-2xl block mb-2">🔐</span>
+          <span class="text-sm text-gray-300">SOC Analyst</span>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="/outcomes" class="btn-primary">
+          Explore All Career Paths
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <SectionHeading 
+        badge="Success Stories"
+        title="Hear From Our <span class='text-gradient'>Community</span>"
+        subtitle="Real experiences from real people transforming their careers."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {testimonials.testimonials.map((testimonial) => (
+          <TestimonialCard {...testimonial} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 relative">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="glass-card p-12 md:p-16 relative overflow-hidden">
+        <!-- Background glow -->
+        <div class="absolute -top-20 -right-20 w-60 h-60 bg-electric-cyan/20 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-electric-purple/20 rounded-full blur-3xl"></div>
+        
+        <div class="relative">
+          <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-6">
+            Ready to Transform Your Future?
+          </h2>
+          <p class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
+            Take the first step toward a career in technology. Apply today or request more information about our programs.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/apply" class="btn-primary">
+              Apply Now
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+            <a href="/funding" class="btn-secondary">
+              Explore Funding Options
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

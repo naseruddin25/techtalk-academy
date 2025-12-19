@@ -1,0 +1,35 @@
+{
+  "mainNav": [
+    { "label": "Programs", "href": "/programs" },
+    { "label": "VR Campus", "href": "/vr-campus" },
+    { "label": "Who We Serve", "href": "/who-we-serve" },
+    { "label": "Career Outcomes", "href": "/outcomes" },
+    { "label": "Funding", "href": "/funding" },
+    { "label": "About", "href": "/about" }
+  ],
+  "footerNav": {
+    "programs": [
+      { "label": "Cloud & DevOps", "href": "/programs#cloud-devops" },
+      { "label": "DevSecOps & Cybersecurity", "href": "/programs#devsecops-cyber" },
+      { "label": "Software & QA Engineering", "href": "/programs#software-qa" },
+      { "label": "AI Foundations", "href": "/programs#ai-foundations" }
+    ],
+    "company": [
+      { "label": "About Us", "href": "/about" },
+      { "label": "Career Outcomes", "href": "/outcomes" },
+      { "label": "Funding Options", "href": "/funding" },
+      { "label": "VR Campus", "href": "/vr-campus" }
+    ],
+    "resources": [
+      { "label": "Apply Now", "href": "/apply" },
+      { "label": "Who We Serve", "href": "/who-we-serve" },
+      { "label": "Privacy Policy", "href": "/privacy" },
+      { "label": "Accessibility", "href": "/accessibility" }
+    ]
+  },
+  "social": [
+    { "label": "LinkedIn", "href": "#", "icon": "linkedin" },
+    { "label": "Twitter", "href": "#", "icon": "twitter" },
+    { "label": "YouTube", "href": "#", "icon": "youtube" }
+  ]
+}

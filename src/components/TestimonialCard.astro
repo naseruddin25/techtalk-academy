@@ -1,0 +1,31 @@
+---
+interface Props {
+  quote: string;
+  author: string;
+  role: string;
+  program: string;
+}
+
+const { quote, author, role, program } = Astro.props;
+---
+
+<div class="glass-card p-8 relative">
+  <!-- Quote mark -->
+  <div class="absolute top-6 left-6 text-6xl text-electric-cyan/20 font-serif leading-none">"</div>
+  
+  <blockquote class="relative pt-8">
+    <p class="text-gray-300 text-lg leading-relaxed mb-6">
+      {quote}
+    </p>
+    <footer class="flex items-center gap-4">
+      <div class="w-12 h-12 rounded-full bg-gradient-to-br from-electric-cyan to-electric-purple flex items-center justify-center text-navy-950 font-bold">
+        {author.charAt(0)}
+      </div>
+      <div>
+        <div class="font-display font-semibold text-white">{author}</div>
+        <div class="text-sm text-gray-400">{role}</div>
+        <div class="text-xs text-electric-cyan">{program}</div>
+      </div>
+    </footer>
+  </blockquote>
+</div>

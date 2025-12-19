@@ -1,0 +1,60 @@
+{
+  "stats": [
+    {
+      "value": "4",
+      "label": "Career Pathways",
+      "description": "Focused programs aligned to industry demand",
+      "icon": "🎯"
+    },
+    {
+      "value": "50+",
+      "label": "Hands-On Labs",
+      "description": "Immersive simulations and practical exercises",
+      "icon": "🥽"
+    },
+    {
+      "value": "100%",
+      "label": "Project-Based",
+      "description": "Learn by building real-world solutions",
+      "icon": "🚀"
+    },
+    {
+      "value": "24/7",
+      "label": "Learning Access",
+      "description": "Flexible schedules for working professionals",
+      "icon": "⏰"
+    }
+  ],
+  "features": [
+    {
+      "title": "VR-Enabled Learning",
+      "description": "Experience immersive virtual environments that bring complex concepts to life",
+      "icon": "🥽"
+    },
+    {
+      "title": "Industry Curriculum",
+      "description": "Content designed by practitioners and aligned to current market demands",
+      "icon": "💼"
+    },
+    {
+      "title": "Hands-On Labs",
+      "description": "Practice in realistic environments with guided simulations",
+      "icon": "🧪"
+    },
+    {
+      "title": "Expert Instructors",
+      "description": "Learn from diverse professionals with real-world experience",
+      "icon": "🎓"
+    },
+    {
+      "title": "Career Support",
+      "description": "Portfolio building, interview prep, and career guidance",
+      "icon": "🎯"
+    },
+    {
+      "title": "Community",
+      "description": "Join a network of learners, mentors, and industry partners",
+      "icon": "🤝"
+    }
+  ]
+}

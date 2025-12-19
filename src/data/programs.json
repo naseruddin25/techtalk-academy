@@ -1,0 +1,92 @@
+{
+  "programs": [
+    {
+      "id": "cloud-devops",
+      "title": "Cloud & DevOps",
+      "emoji": "☁️",
+      "tagline": "Build and Scale Modern Infrastructure",
+      "description": "Master cloud platforms, infrastructure automation, and modern deployment practices. Learn to architect resilient systems and implement CI/CD pipelines used by leading technology companies.",
+      "skills": [
+        "Cloud Architecture & Services",
+        "Infrastructure as Code",
+        "Container Orchestration",
+        "CI/CD Pipeline Design",
+        "Monitoring & Observability",
+        "Cost Optimization"
+      ],
+      "outcomes": [
+        "Deploy production-grade cloud infrastructure",
+        "Automate complex deployment workflows",
+        "Implement scalable microservices architectures",
+        "Build comprehensive monitoring solutions"
+      ],
+      "color": "cyan"
+    },
+    {
+      "id": "devsecops-cyber",
+      "title": "DevSecOps & Cybersecurity",
+      "emoji": "🛡️",
+      "tagline": "Secure the Digital Frontier",
+      "description": "Integrate security throughout the development lifecycle. Learn to identify vulnerabilities, implement security controls, and protect modern cloud-native applications from emerging threats.",
+      "skills": [
+        "Security Architecture",
+        "Threat Modeling",
+        "Vulnerability Assessment",
+        "Security Automation",
+        "Compliance Frameworks",
+        "Incident Response"
+      ],
+      "outcomes": [
+        "Implement secure development pipelines",
+        "Conduct comprehensive security assessments",
+        "Design defense-in-depth strategies",
+        "Automate security testing and compliance"
+      ],
+      "color": "purple"
+    },
+    {
+      "id": "software-qa",
+      "title": "Software & QA Engineering",
+      "emoji": "💻",
+      "tagline": "Craft Quality Software at Scale",
+      "description": "Develop robust software engineering skills alongside advanced quality assurance practices. Learn modern development methodologies and automated testing strategies that ensure reliability.",
+      "skills": [
+        "Full-Stack Development",
+        "Test Automation Frameworks",
+        "API Design & Testing",
+        "Performance Engineering",
+        "Agile Methodologies",
+        "Code Quality Practices"
+      ],
+      "outcomes": [
+        "Build production-ready applications",
+        "Design comprehensive test strategies",
+        "Implement automated testing pipelines",
+        "Deliver high-quality, maintainable code"
+      ],
+      "color": "blue"
+    },
+    {
+      "id": "ai-foundations",
+      "title": "AI Foundations",
+      "emoji": "🤖",
+      "tagline": "Shape the Future with AI",
+      "description": "Build foundational understanding of artificial intelligence and machine learning. Learn to implement AI solutions, work with modern AI tools, and prepare for the AI-augmented workplace.",
+      "skills": [
+        "Machine Learning Fundamentals",
+        "AI Tool Integration",
+        "Prompt Engineering",
+        "AI Operations & MLOps",
+        "Ethical AI Practices",
+        "AI-Assisted Development"
+      ],
+      "outcomes": [
+        "Implement practical AI solutions",
+        "Integrate AI tools into workflows",
+        "Build AI-powered automations",
+        "Evaluate and deploy AI models"
+      ],
+      "color": "gold"
+    }
+  ]
+}

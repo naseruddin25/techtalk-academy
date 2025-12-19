@@ -1,0 +1,289 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+---
+
+<BaseLayout title="Funding & Accessibility — TechTalk Academy" description="Explore funding options and accessibility initiatives to make tech education attainable.">
+  <!-- Hero Section -->
+  <Hero 
+    title="Making Education <span class='text-gradient'>Accessible</span>"
+    subtitle="Quality tech education should be within reach. We're committed to providing pathways for everyone."
+    showCta={false}
+    size="medium"
+  />
+
+  <!-- Funding Options -->
+  <section class="py-12 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <SectionHeading 
+        badge="Funding Options"
+        title="Pathways to <span class='text-gradient'>Affordability</span>"
+        subtitle="We work with multiple funding sources to help make your education possible."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <!-- WIOA -->
+        <div class="glass-card p-8 md:p-10 border-t-4 border-electric-cyan">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-electric-cyan/20 to-electric-cyan/5 flex items-center justify-center">
+              <span class="text-2xl">🏛️</span>
+            </div>
+            <div>
+              <h3 class="font-display text-xl font-bold text-white">Workforce Development (WIOA)</h3>
+              <p class="text-sm text-electric-cyan">Federal Workforce Funding</p>
+            </div>
+          </div>
+          <p class="text-gray-400 mb-6">
+            The Workforce Innovation and Opportunity Act (WIOA) provides funding for eligible individuals seeking career training. We work with local workforce boards to help qualified candidates access these resources.
+          </p>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center gap-2 text-sm text-gray-300">
+              <svg class="w-4 h-4 text-electric-cyan" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Income-based eligibility
+            </div>
+            <div class="flex items-center gap-2 text-sm text-gray-300">
+              <svg class="w-4 h-4 text-electric-cyan" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Coverage varies by program and location
+            </div>
+            <div class="flex items-center gap-2 text-sm text-gray-300">
+              <svg class="w-4 h-4 text-electric-cyan" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              We assist with application process
+            </div>
+          </div>
+          <p class="text-xs text-gray-500">
+            Eligibility and funding amounts determined by local workforce agencies. Contact us to explore your options.
+          </p>
+        </div>
+
+        <!-- Veteran Benefits -->
+        <div class="glass-card p-8 md:p-10 border-t-4 border-gold-400">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-400/20 to-gold-400/5 flex items-center justify-center">
+              <span class="text-2xl">🎖️</span>
+            </div>
+            <div>
+              <h3 class="font-display text-xl font-bold text-white">Veteran Benefits</h3>
+              <p class="text-sm text-gold-400">Service Member Support</p>
+            </div>
+          </div>
+          <p class="text-gray-400 mb-6">
+            Veterans and service members may have access to educational benefits through various programs. We're committed to supporting those who have served.
+          </p>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center gap-2 text-sm text-gray-300">
+              <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Various veteran education programs
+            </div>
+            <div class="flex items-center gap-2 text-sm text-gray-300">
+              <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Dedicated veteran support
+            </div>
+            <div class="flex items-center gap-2 text-sm text-gray-300">
+              <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Transition assistance
+            </div>
+          </div>
+          <p class="text-xs text-gray-500">
+            Benefits vary based on service history and program. Contact us to discuss your specific situation.
+          </p>
+        </div>
+
+        <!-- Employer Sponsorship -->
+        <div class="glass-card p-8 md:p-10 border-t-4 border-electric-purple">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-electric-purple/20 to-electric-purple/5 flex items-center justify-center">
+              <span class="text-2xl">🏢</span>
+            </div>
+            <div>
+              <h3 class="font-display text-xl font-bold text-white">Employer Sponsorship</h3>
+              <p class="text-sm text-electric-purple">Corporate Partnerships</p>
+            </div>
+          </div>
+          <p class="text-gray-400 mb-6">
+            Some employers invest in upskilling their workforce or sponsor training for future hires. We work with companies to create custom training arrangements.
+          </p>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center gap-2 text-sm text-gray-300">
+              <svg class="w-4 h-4 text-electric-purple" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Custom corporate programs
+            </div>
+            <div class="flex items-center gap-2 text-sm text-gray-300">
+              <svg class="w-4 h-4 text-electric-purple" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Talent pipeline partnerships
+            </div>
+            <div class="flex items-center gap-2 text-sm text-gray-300">
+              <svg class="w-4 h-4 text-electric-purple" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Ask your employer about tuition support
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Plans -->
+        <div class="glass-card p-8 md:p-10 border-t-4 border-electric-blue">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-electric-blue/20 to-electric-blue/5 flex items-center justify-center">
+              <span class="text-2xl">📅</span>
+            </div>
+            <div>
+              <h3 class="font-display text-xl font-bold text-white">Flexible Payment</h3>
+              <p class="text-sm text-electric-blue">Payment Options</p>
+            </div>
+          </div>
+          <p class="text-gray-400 mb-6">
+            For those who don't qualify for other funding sources, we offer flexible payment arrangements to help make education more manageable.
+          </p>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center gap-2 text-sm text-gray-300">
+              <svg class="w-4 h-4 text-electric-blue" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Structured payment plans
+            </div>
+            <div class="flex items-center gap-2 text-sm text-gray-300">
+              <svg class="w-4 h-4 text-electric-blue" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Multiple payment options
+            </div>
+            <div class="flex items-center gap-2 text-sm text-gray-300">
+              <svg class="w-4 h-4 text-electric-blue" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Individual financial counseling
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equity & Access -->
+  <section class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-electric-purple/5 to-transparent"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-6">
+      <SectionHeading 
+        badge="Our Commitment"
+        title="Equity & <span class='text-gradient'>Access</span>"
+        subtitle="We believe talent is everywhere, but opportunity isn't. We're working to change that."
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <div class="glass-card p-6">
+            <h3 class="font-display font-semibold text-white mb-3 flex items-center gap-2">
+              <span class="text-xl">🌍</span>
+              Reaching Underserved Communities
+            </h3>
+            <p class="text-gray-400 text-sm">
+              We actively partner with community organizations to reach individuals who might not otherwise have access to quality tech education.
+            </p>
+          </div>
+          <div class="glass-card p-6">
+            <h3 class="font-display font-semibold text-white mb-3 flex items-center gap-2">
+              <span class="text-xl">♿</span>
+              Accessibility-First Design
+            </h3>
+            <p class="text-gray-400 text-sm">
+              Our learning platform and content are designed with accessibility in mind. VR-enhanced, but never VR-required.
+            </p>
+          </div>
+          <div class="glass-card p-6">
+            <h3 class="font-display font-semibold text-white mb-3 flex items-center gap-2">
+              <span class="text-xl">🤝</span>
+              Community Partnerships
+            </h3>
+            <p class="text-gray-400 text-sm">
+              We collaborate with local organizations, workforce agencies, and community groups to maximize reach and impact.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-card p-8 md:p-10">
+          <h3 class="font-display text-xl font-bold text-white mb-6">Compliance & Trust</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-electric-cyan/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3 h-3 text-electric-cyan" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </span>
+              <div>
+                <h4 class="font-semibold text-white text-sm">Student Privacy</h4>
+                <p class="text-gray-400 text-xs">We take student data protection seriously and maintain appropriate privacy safeguards including FERPA-aware practices.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-electric-cyan/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3 h-3 text-electric-cyan" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </span>
+              <div>
+                <h4 class="font-semibold text-white text-sm">Transparent Outcomes</h4>
+                <p class="text-gray-400 text-xs">We're committed to honest, transparent communication about what our programs can and cannot promise.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-electric-cyan/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3 h-3 text-electric-cyan" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </span>
+              <div>
+                <h4 class="font-semibold text-white text-sm">Grant-Ready Documentation</h4>
+                <p class="text-gray-400 text-xs">We maintain documentation and reporting structures that support workforce development partnerships.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 relative">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="glass-card p-12 relative overflow-hidden">
+        <div class="absolute -top-20 -right-20 w-60 h-60 bg-electric-cyan/20 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-electric-purple/20 rounded-full blur-3xl"></div>
+        
+        <div class="relative">
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-6">
+            Let's Find Your Path
+          </h2>
+          <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
+            Every situation is different. Contact us to discuss your specific circumstances and explore what options might be available to you.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/apply" class="btn-primary">
+              Apply Now
+            </a>
+            <a href="/apply?inquiry=funding" class="btn-secondary">
+              Ask About Funding
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
