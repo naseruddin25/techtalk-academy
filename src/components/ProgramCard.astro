@@ -13,10 +13,10 @@ interface Props {
 const { id, title, emoji, tagline, description, skills, outcomes, color } = Astro.props;
 
 const colorClasses = {
-  cyan: 'from-electric-cyan to-electric-blue border-electric-cyan/20 hover:border-electric-cyan/40',
-  purple: 'from-electric-purple to-pink-500 border-electric-purple/20 hover:border-electric-purple/40',
-  blue: 'from-electric-blue to-indigo-500 border-electric-blue/20 hover:border-electric-blue/40',
-  gold: 'from-gold-400 to-orange-500 border-gold-400/20 hover:border-gold-400/40'
+  cyan: 'bg-gradient-to-br from-electric-cyan to-electric-blue border-electric-cyan/20 hover:border-electric-cyan/40',
+  purple: 'bg-gradient-to-br from-electric-purple to-pink-500 border-electric-purple/20 hover:border-electric-purple/40',
+  blue: 'bg-gradient-to-br from-electric-blue to-indigo-500 border-electric-blue/20 hover:border-electric-blue/40',
+  gold: 'bg-gradient-to-br from-gold-400 to-orange-500 border-gold-400/20 hover:border-gold-400/40'
 };
 
 const glowClasses = {
@@ -27,11 +27,11 @@ const glowClasses = {
 };
 ---
 
-<article id={id} class={`glass-card relative overflow-hidden transition-all duration-500 border ${colorClasses[color]} hover:${glowClasses[color]}`}>
+<article id={id} class={`glass-card relative overflow-hidden transition-all duration-500 bg ${colorClasses[color]} hover:${glowClasses[color]}`}>
   <!-- Top gradient bar -->
-  <div class={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${colorClasses[color].split(' ')[0]} ${colorClasses[color].split(' ')[1]}`}></div>
+  <div class={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${colorClasses[color].split(' ')[1]} ${colorClasses[color].split(' ')[2]}`}></div>
   
-  <div class="p-8 md:p-10">
+  <div class="p-8 md:p-10 relative z-10">
     <!-- Header -->
     <div class="flex items-start gap-4 mb-6">
       <span class="text-4xl">{emoji}</span>
@@ -44,16 +44,16 @@ const glowClasses = {
     </div>
 
     <!-- Description -->
-    <p class="text-gray-400 mb-8 leading-relaxed">
+    <p class="text-gray-200 mb-8 leading-relaxed">
       {description}
     </p>
 
     <!-- Skills -->
     <div class="mb-8">
-      <h4 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Skills You'll Build</h4>
+      <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Skills You'll Build</h4>
       <div class="flex flex-wrap gap-2">
         {skills.map((skill) => (
-          <span class="px-3 py-1.5 text-sm bg-white/5 border border-white/10 rounded-lg text-gray-300">
+          <span class="px-3 py-1.5 text-sm bg-white/10 border border-white/20 rounded-lg text-white">
             {skill}
           </span>
         ))}
@@ -62,10 +62,10 @@ const glowClasses = {
 
     <!-- Outcomes -->
     <div>
-      <h4 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">What You'll Achieve</h4>
+      <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">What You'll Achieve</h4>
       <ul class="space-y-3">
         {outcomes.map((outcome) => (
-          <li class="flex items-start gap-3 text-gray-400">
+          <li class="flex items-start gap-3 text-gray-200">
             <svg class={`w-5 h-5 mt-0.5 flex-shrink-0 text-gradient`} fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
@@ -76,3 +76,17 @@ const glowClasses = {
     </div>
   </div>
 </article>
+
+<style>
+  article::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.4) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+</style>
