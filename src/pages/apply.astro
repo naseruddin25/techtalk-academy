@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+const APPLICATIONS_OPEN = true;
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/REPLACE_ME';
 ---
 
 <BaseLayout 
@@ -24,7 +26,10 @@ import Hero from '../components/Hero.astro';
               <h2 class="text-2xl font-display font-bold text-white mb-2">Request Information</h2>
               <p class="text-slate-400 mb-8">Fill out the form below and our admissions team will reach out to you.</p>
               
-              <form id="contact-form" class="space-y-6">
+              {APPLICATIONS_OPEN ? (
+              <form id="contact-form" class="space-y-6" method="POST" action={FORMSPREE_ENDPOINT}>
+                <!-- Honeypot field -->
+                <input type="text" name="website" id="website" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
                 <!-- Name Fields -->
                 <div class="grid md:grid-cols-2 gap-6">
                   <div>
@@ -163,7 +168,23 @@ import Hero from '../components/Hero.astro';
                     Submit Request
                   </button>
                 </div>
+
+                <!-- Inline error -->
+                <p id="form-error" class="hidden text-amber-400 text-sm mt-4" role="alert" aria-live="polite">
+                  Something went wrong. Please try again in a moment.
+                </p>
               </form>
+              ) : (
+                <div class="glass-card p-6 text-center">
+                  <h3 class="font-display text-xl text-white mb-2">Applications opening soon</h3>
+                  <p class="text-slate-300 mb-4">Leave your email and we’ll notify you as soon as we open.</p>
+                  <form id="interest-form" class="flex flex-col sm:flex-row gap-3 justify-center" method="POST" action={FORMSPREE_ENDPOINT}>
+                    <input type="email" name="email" required class="input-field flex-1" placeholder="you@example.com" />
+                    <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+                    <button class="btn-primary">Notify Me</button>
+                  </form>
+                </div>
+              )}
 
               <!-- Form Success Message (hidden by default) -->
               <div id="form-success" class="hidden text-center py-12">
@@ -176,6 +197,11 @@ import Hero from '../components/Hero.astro';
                 <p class="text-slate-300">
                   We've received your request. Our admissions team will be in touch within 2 business days.
                 </p>
+              </div>
+              <!-- What happens after you apply -->
+              <div class="mt-10 glass-card p-6">
+                <h3 class="text-lg font-display font-bold text-white mb-2">What happens after you apply</h3>
+                <p class="text-slate-300 text-sm">You’ll get a confirmation email and we’ll reach out within 1–2 business days to schedule a brief consultation.</p>
               </div>
             </div>
           </div>
@@ -214,13 +240,13 @@ import Hero from '../components/Hero.astro';
             <div class="glass-card p-6">
               <h3 class="text-lg font-display font-bold text-white mb-4">Other Ways to Connect</h3>
               <div class="space-y-4">
-                <a href="mailto:admissions@techtalkacademy.com" class="flex items-center gap-3 text-slate-300 hover:text-cyan-400 transition-colors group">
+                <a href="mailto:admissions@techtalkacademy.org" class="flex items-center gap-3 text-slate-300 hover:text-cyan-400 transition-colors group">
                   <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                     </svg>
                   </div>
-                  <span>admissions@techtalkacademy.com</span>
+                  <span>admissions@techtalkacademy.org</span>
                 </a>
                 <div class="pt-2 border-t border-white/10">
                   <p class="text-sm text-slate-400">
@@ -255,21 +281,44 @@ import Hero from '../components/Hero.astro';
   </section>
 
   <script>
-    // Simple form handling (shows success message)
-    document.getElementById('contact-form')?.addEventListener('submit', function(e) {
+    // Formspree submission with inline success/error and honeypot
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('form-success');
+    const errorMsg = document.getElementById('form-error');
+
+    form?.addEventListener('submit', async (e) => {
       e.preventDefault();
-      
-      // Hide form, show success message
-      const form = document.getElementById('contact-form');
-      const success = document.getElementById('form-success');
-      
-      if (form && success) {
+
+      const hpInput = document.getElementById('website');
+      const hp = hpInput && 'value' in hpInput ? hpInput.value : '';
+      if (hp && hp.trim() !== '') {
+        // Honeypot filled: silently succeed
         form.classList.add('hidden');
-        success.classList.remove('hidden');
+        if (success) success.classList.remove('hidden');
+        (form as HTMLFormElement).reset?.();
+        return;
       }
-      
-      // In a real implementation, you would send the form data to a backend service
-      // For static sites, consider using Formspree, Netlify Forms, or similar
+
+      const endpoint = form.getAttribute('action');
+      const data = new FormData(form as HTMLFormElement);
+
+      try {
+        const res = await fetch(endpoint as string, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.classList.add('hidden');
+          errorMsg?.classList.add('hidden');
+          success?.classList.remove('hidden');
+          (form as HTMLFormElement).reset();
+        } else {
+          errorMsg?.classList.remove('hidden');
+        }
+      } catch (err) {
+        errorMsg?.classList.remove('hidden');
+      }
     });
   </script>
 </BaseLayout>
