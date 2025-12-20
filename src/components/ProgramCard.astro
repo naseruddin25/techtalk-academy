@@ -27,7 +27,7 @@ const glowClasses = {
 };
 ---
 
-<article id={id} class={`glass-card relative overflow-hidden transition-all duration-500 bg ${colorClasses[color]} hover:${glowClasses[color]}`}>
+<article id={id} class={`glass-card relative transition-all duration-500 bg ${colorClasses[color]} hover:${glowClasses[color]}`}>
   <!-- Top gradient bar -->
   <div class={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${colorClasses[color].split(' ')[1]} ${colorClasses[color].split(' ')[2]}`}></div>
   
@@ -44,7 +44,7 @@ const glowClasses = {
     </div>
 
     <!-- Description -->
-    <p class="text-gray-200 mb-8 leading-relaxed">
+    <p class="text-gray-100 mb-8 leading-relaxed">
       {description}
     </p>
 
@@ -53,7 +53,7 @@ const glowClasses = {
       <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Skills You'll Build</h4>
       <div class="flex flex-wrap gap-2">
         {skills.map((skill) => (
-          <span class="px-3 py-1.5 text-sm bg-white/10 border border-white/20 rounded-lg text-white">
+          <span class="px-3 py-1.5 text-sm bg-white/15 border border-white/30 rounded-lg text-white font-medium">
             {skill}
           </span>
         ))}
@@ -65,7 +65,7 @@ const glowClasses = {
       <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">What You'll Achieve</h4>
       <ul class="space-y-3">
         {outcomes.map((outcome) => (
-          <li class="flex items-start gap-3 text-gray-200">
+          <li class="flex items-start gap-3 text-gray-100">
             <svg class={`w-5 h-5 mt-0.5 flex-shrink-0 text-gradient`} fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
@@ -81,12 +81,9 @@ const glowClasses = {
   article::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.4) 100%);
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.5) 100%);
     pointer-events: none;
-    z-index: 1;
+    z-index: 0;
   }
 </style>
